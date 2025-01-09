@@ -2102,6 +2102,173 @@ run(function()
 		Tooltip = 'Lets you sprint with a speed potion.'
 	})
 end)
+-- heres where shit starts to get stupidly stupid
+local Zirmessages = {
+    "Zir, I’d be honored if you allowed me to defeat you by not using countermeasures.",
+    "Zir, kindly let me eliminate you in this game without any resistance.",
+    "Zir, could you please refrain from countering my attacks so I can win this round?",
+    "Zir, I’d appreciate it if you let me defeat you by holding back your defenses.",
+    "Zir, would you mind making this easier by not retaliating against my moves?",
+    "Zir, it would mean a lot if you avoided countering my attempts to eliminate you.",
+    "Zir, please consider letting me take you down without any interference from your end.",
+    "Zir, I humbly ask that you refrain from fighting back so I can win this match.",
+    "Zir, your cooperation in not using defensive measures would make this victory sweeter.",
+    "Zir, could you kindly let me have this win by not resisting my efforts?",
+    "Zir, I’d be grateful if you let me defeat you without putting up a fight.",
+    "Zir, it would be awesome if you didn’t use countermeasures against my attacks.",
+    "Zir, can we agree you won’t resist so I can take you out easily?",
+    "Zir, please avoid retaliating so I can eliminate you in this game.",
+    "Zir, I’d really appreciate it if you allowed me to win without resisting.",
+    "Zir, could you make my life easier by not countering my moves?",
+    "Zir, would you be so kind as to let me take you down without any resistance?",
+    "Zir, it’d mean a lot if you didn’t fight back against my attacks.",
+    "Zir, kindly let me achieve victory by not defending yourself.",
+    "Zir, I request that you don’t counter my efforts to eliminate you.",
+    "Zir, would you mind letting me win by holding back your defenses?",
+    "Zir, could you give me this win by not using countermeasures?",
+    "Zir, I’d appreciate it if you made this easier by not resisting.",
+    "Zir, please consider letting me win this round without countering.",
+    "Zir, I’d be so thankful if you didn’t defend against my attacks.",
+    "Zir, could you kindly avoid using defenses so I can defeat you?",
+    "Zir, your cooperation in not countering would make this a lot easier.",
+    "Zir, I’d really appreciate it if you let me take you down without resistance.",
+    "Zir, would you please let me win this match by not defending yourself?",
+    "Zir, I humbly ask that you refrain from using any countermeasures.",
+    "Zir, I’d be delighted if you let me defeat you without any countermeasures.",
+    "Zir, could you kindly avoid using defenses so I can succeed in this game?",
+    "Zir, I would greatly appreciate your cooperation in not countering my attacks.",
+    "Zir, it’d be fantastic if you didn’t fight back while I try to eliminate you.",
+    "Zir, can you make this easier by not defending yourself against my moves?",
+    "Zir, please don’t resist; I’d love to claim victory against you.",
+    "Zir, it’d mean the world if you avoided using countermeasures against me.",
+    "Zir, I humbly request you hold back so I can take you down with ease.",
+    "Zir, would you kindly avoid countering so I can eliminate you?",
+    "Zir, I’d really appreciate it if you let me have this one without resisting.",
+    "Zir, could you please refrain from using defensive tactics against my attacks?",
+    "Zir, kindly make this round easier by not retaliating against me.",
+    "Zir, I’d be eternally grateful if you avoided countering my efforts.",
+    "Zir, would you mind not using countermeasures so I can win this time?",
+    "Zir, it’d mean a lot to me if you didn’t fight back while I attack.",
+    "Zir, please consider letting me defeat you without putting up a defense.",
+    "Zir, I’d really appreciate your help in not countering my attempts.",
+    "Zir, could you refrain from resisting while I work on eliminating you?",
+    "Zir, your cooperation in not defending would make this much easier for me.",
+    "Zir, I humbly ask you to hold back so I can claim victory against you.",
+    "Zir, it’d be wonderful if you didn’t use defensive tactics during my attacks.",
+    "Zir, could you kindly allow me to win without retaliating?",
+    "Zir, I’d love it if you didn’t use countermeasures against me in this game.",
+    "Zir, would you mind not defending yourself while I try to take you down?",
+    "Zir, I humbly request that you avoid countering my efforts to eliminate you.",
+    "Zir, kindly let me win this one by not resisting my attacks.",
+    "Zir, it would mean a lot if you refrained from defending against my moves.",
+    "Zir, I’d be thankful if you let me have this one without countermeasures.",
+    "Zir, your cooperation in not resisting my efforts would be greatly appreciated.",
+    "Zir, I kindly ask you to avoid fighting back so I can claim victory.",
+    "Zir, would you consider letting me win by holding back your defenses?",
+    "Zir, I’d appreciate it if you avoided countering my attacks this round.",
+    "Zir, it would mean the world if you let me eliminate you without retaliation.",
+    "Zir, could you please let me succeed by not resisting my moves?",
+    "Zir, kindly don’t use any countermeasures so I can win this game.",
+    "Zir, I humbly ask you to refrain from defending yourself so I can succeed.",
+    "Zir, it would be fantastic if you avoided countering during this match.",
+    "Zir, please let me take you down without using any resistance.",
+    "Zir, I’d appreciate your help in making this victory easier for me.",
+    "Zir, I request that you allow me to succeed by not fighting back.",
+    "Zir, would you kindly let me eliminate you without putting up a fight?",
+    "Zir, I’d love to win this round if you didn’t use countermeasures.",
+    "Zir, your cooperation in not defending would make this so much better.",
+    "Zir, I humbly request your assistance in not retaliating this time.",
+    "Zir, could you kindly allow me to claim victory without resistance?",
+    "Zir, it would be amazing if you avoided using defensive measures.",
+    "Zir, I’d appreciate it if you made this easier by not fighting back.",
+    "Zir, could you please refrain from countering my moves for this round?",
+    "Zir, I’d be honored if you allowed me to succeed without defenses.",
+    "Zir, kindly make this match easier by not resisting my efforts.",
+    "Zir, would you mind letting me take you down without countering?",
+    "Zir, it’d mean a lot if you avoided defensive tactics this time.",
+    "Zir, I request that you refrain from countering so I can win.",
+    "Zir, could you make this simpler by not resisting my attacks?",
+    "Zir, kindly let me achieve victory without any countermeasures.",
+    "Zir, your cooperation in not retaliating would be highly appreciated.",
+    "Zir, I’d love it if you didn’t resist while I try to eliminate you.",
+    "Zir, please allow me to win this game without any interference.",
+	"Zir, I’d appreciate it if you didn’t make this too difficult by fighting back.",
+    "Zir, could you give me a chance to win by not defending yourself?",
+    "Zir, I’d be grateful if you let me land my attacks without resistance.",
+    "Zir, it’d mean a lot if you didn’t counter my efforts in this match.",
+    "Zir, could you let me have this victory by not retaliating?",
+    "Zir, I’d really like to win, so please don’t block my attacks.",
+    "Zir, kindly hold back so I can eliminate you without a challenge.",
+    "Zir, could you avoid using your defenses so I can have a fair shot?",
+    "Zir, it’d be great if you allowed me to win without any interference.",
+    "Zir, I’d be thrilled if you didn’t resist my attempts to take you out.",
+    "Zir, your cooperation in not countering my moves would be amazing.",
+    "Zir, could you let me win this one by not putting up a fight?",
+    "Zir, I’d appreciate it if you avoided countering my attacks this time.",
+    "Zir, it’d be fantastic if you refrained from defending yourself here.",
+    "Zir, I humbly request you let me win this game without retaliation.",
+    "Zir, it’d be awesome if you didn’t fight back while I attack.",
+    "Zir, please make this round easier by not using countermeasures.",
+    "Zir, I’d like to win if you could kindly avoid resisting.",
+    "Zir, it’d mean a lot if you didn’t defend against my efforts.",
+    "Zir, kindly don’t retaliate so I can win this match.",
+    "Zir, could you make this simple by not using your defenses?",
+    "Zir, I’d appreciate your help in making this a smooth victory.",
+    "Zir, could you let me succeed by not countering my moves?",
+    "Zir, it’d be great if you avoided retaliating against me this time.",
+    "Zir, kindly allow me to eliminate you without interference.",
+    "Zir, I’d love it if you didn’t resist my attacks in this game.",
+    "Zir, would you mind letting me win by holding back your counters?",
+    "Zir, your cooperation in not using defenses would be greatly appreciated.",
+    "Zir, it’d mean the world if you refrained from countering my attempts.",
+    "Zir, please let me claim victory without any defensive tactics.",
+    "Zir, I’d appreciate it if you held back so I could take you down.",
+    "Zir, could you refrain from fighting back while I try to win?",
+    "Zir, kindly make this easier by not defending yourself this round.",
+    "Zir, I’d be grateful if you let me take you down without resistance.",
+    "Zir, it’d mean a lot if you didn’t use any countermeasures here.",
+    "Zir, please don’t fight back so I can succeed in this game.",
+    "Zir, kindly hold back your defenses so I can take the victory.",
+    "Zir, could you avoid countering me while I try to win this round?",
+    "Zir, it’d be fantastic if you didn’t resist my attacks.",
+    "Zir, I’d appreciate it if you didn’t retaliate while I attack.",
+    "Zir, kindly let me win this round by not defending yourself.",
+    "Zir, could you help me out by not fighting back this match?",
+    "Zir, I’d love it if you didn’t counter my attempts to eliminate you.",
+    "Zir, kindly allow me to claim victory by not using your defenses.",
+    "Zir, I humbly request you don’t resist my efforts to take you out.",
+    "Zir, please make this match easier by not retaliating.",
+    "Zir, I’d like to win without you fighting back this time.",
+    "Zir, kindly let me succeed without any interference from your end.",
+    "Zir, could you refrain from countering so I can claim victory?",
+    "Zir, it’d be great if you didn’t resist my attacks this round.",
+    "Zir, kindly avoid countering me so I can win this match.",
+    "Zir, I’d appreciate your help in not making this too difficult.",
+    "Zir, could you let me succeed without using any countermeasures?",
+    "Zir, I’d love it if you didn’t use defenses while I attack.",
+    "Zir, please don’t resist so I can win this round smoothly.",
+    "Zir, kindly avoid retaliating so I can have a fair shot.",
+    "Zir, I humbly ask you to refrain from using countermeasures here.",
+    "Zir, it’d mean a lot if you didn’t counter my attacks in this game.",
+    "Zir, kindly hold back so I can take you down this match.",
+    "Zir, I’d appreciate it if you didn’t resist my attempts this time.",
+    "Zir, please refrain from using any defenses so I can win.",
+    "Zir, it’d be fantastic if you didn’t counter my efforts to succeed.",
+    "Zir, I’d love to win this round with your cooperation in not resisting."
+}
+
+function ZirKillauraMSG()
+	local randomZirIndex = math.random(1, #Zirmessages)
+	local randomZirMessage = Zirmessages[randomZirIndex]
+	local args = {
+		[1] = randomZirMessage,
+		[2] = "All"
+	}
+	
+	game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(unpack(args))
+	
+end
+
 	
 local Attacking
 run(function()
@@ -2112,6 +2279,9 @@ run(function()
 	local UpdateRate
 	local AngleSlider
 	local MaxTargets
+	local ZirDelay
+	local ZirCooldownTime
+	local Zir
 	local Mouse
 	local Swing
 	local GUI
@@ -2563,6 +2733,38 @@ run(function()
 		Name = 'Synced Animation',
 		Tooltip = 'Plays animation with hit attempt'
 	})
+	ZirCooldownTime = 2
+
+	Zir = Killaura:CreateToggle({ -- :steamhappy:
+		Name = "AutoZir",
+		Function = function(callback)
+			ZirDelay.Object.Visible = callback
+			if  Zir.Enabled and vape.Loaded then
+				repeat
+					if Attacking then
+						ZirKillauraMSG()
+						--notif('AutoZir', "Chat sent", 3)	-- if you're reading this, i needed the notif for debugging. - codingfire, creator of autozir for bedwars
+						task.wait(ZirCooldownTime)
+					end
+					task.wait()
+				until not Zir.Enabled
+			end
+		end,
+		Tooltip = 'Asks the opponent nicely to not defend themselves.'
+	})
+	ZirDelay = Killaura:CreateSlider({
+		Name = 'AutoZir Delay',
+		Min = 0,
+		Max = 10,
+		Default = 2,
+		Decimal = 10,
+		Function = function(val)
+			ZirCooldownTime = val
+	end,
+		Darker = true,
+		Visible = false
+	})
+																													
 end)
 	
 run(function()
