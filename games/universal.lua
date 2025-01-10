@@ -7800,4 +7800,61 @@ run(function()
 	})
 	
 end)
-	
+
+local Sigmeme
+
+	Sigmeme = vape.Categories.Utility:CreateModule({
+    Name = 'Sigmeme (only works on bw chat)',
+    Function = function(callback)
+		if callback then
+-- skidded of off chatgpt NOT A JOKE BTW
+-- shoutout to xylex for helping me fix stuff :D
+local smessages = {
+    "YAAAA! Its rewind time, this year I want Sigma, and LeakedPVP",
+    "Download Sigma to rekt noobs while listening to some fire music!",
+    "Quick Quiz: I am zeus's son, who am I? SIGMA",
+    "Sigma never dies",
+    "Look a divinity! He definitely must use sigma!",
+    "I am not biased, but I only like Sigma users. so git gut noobs",
+    "Don't anger me or you will discover the true power of Sigma.",
+    "Learn your alphabet with the sigma client: Omikron, Sigma, Epsilon, Alpha!",
+    "What should I choose? Sigma or Sigma?",
+    "In need of a cute present for Christmas? Sigma is all you need!",
+    "I don't hack I just sigma",
+    "I have a good sigma config, don't blame me",
+    "You guys need gaming chairs for skill? I don't need one, i use Sigma.",
+	"Want skills? Sigma client is your best option.",
+    "Maybe I will be Sigma, I am already Sigma",
+    "Why Sigma? Cause it is the addition of pure skill and incredible intellectual abilities",
+    "Wow! My combo is Sigma'n!",
+    "You have been oofed by Sigma oof oof"
+}
+
+-- Function to pick a random message
+local function sayRandomSigmessage()
+    local randomIndex = math.random(1, #smessages) -- Get a random index
+    local randomMessage = smessages[randomIndex] -- Get the message at the random index
+	local args = {
+		randomMessage,
+		"All"
+	}
+	game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(unpack(args))
+	end
+
+-- Run the function
+--If Sigmeme.Enabled then
+sayRandomSigmessage()
+Sigmeme:Toggle()
+end
+	end,
+    Tooltip = 'Skidded from Sigma 4.11. Says Sigmemes. (also my first ever custom module 😀) Dedicated to all Sigma Client users.'
+})
+
+local PigPacketDisabler
+PigPacketDisabler = vape.Categories.Utility:CreateModule({
+    Name = 'PigPacketDisabler',
+    Function = function(callback)
+       -- Print("Pretend PigPacketDisabler does something. It is just for show.")
+    end,
+    Tooltip = 'Does absolutely nothing as "Pig Packets" dont exist in ROBLOX. Dedicated to LiquidSquid, Xylex, and Mrcooltyper.'
+})
