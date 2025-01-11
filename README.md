@@ -32,6 +32,9 @@ If its not the supposed utility at fault, please try some troubleshooting steps.
 2. Making sure you have connection to [the main loadstring.](https://raw.githubusercontent.com/codingfirewastaken/SkidwareVV4/main/NewMainScript.lua)
 3. Ensuring no external script is conflicting with vape.
 
+### Some shit IDK how 2 fix
+1. Autozir killaura setting requires a retoggle for it to work properly
+
 ## Developers & Credits
 [codingfire](https://github.com/codingfirewastaken) - SW Developer - codingfire on Discord
 <br/>
