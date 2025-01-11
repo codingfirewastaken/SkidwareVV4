@@ -6,9 +6,9 @@
   </picture>
 </p>
 <h2 align="center">
-  A Roblox script built from the ground up for your precise needs!
+  Rekting VW since 2025
   <br/>
-  Rise up to the top while remaining completely untouchable.
+  Rise up to the bottom while destroying skids with a skidded script
 </h2>
 
 ## Contacts
