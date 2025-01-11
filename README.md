@@ -35,7 +35,7 @@ If its not the supposed utility at fault, please try some troubleshooting steps.
 ## Developers & Credits
 [codingfire](https://github.com/codingfirewastaken) - SW Developer - codingfire on Discord
 <br/>
-LiquidSquid - guy who sounds like grian who made the first autozir ever - liquidsquid1 on Discord
+[LiquidSquid](https://media.discordapp.net/attachments/1319043130326257765/1327402625510932520/mayonnaise.mp4?ex=67839847&is=678246c7&hm=f40b99ea7c294ae7f0461f89c8469742ec104581f8f6d2c877222fdeaa760a7e&) - guy who sounds like grian who made the first autozir ever - liquidsquid1 on Discord
 <br/>
 [7GrandDad](https://github.com/7GrandDadPGN) - Original vape dev - vaperoblox on Discord
 <br/>
