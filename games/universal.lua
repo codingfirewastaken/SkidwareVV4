@@ -1,7 +1,7 @@
 local loadstring = function(...)
 	local res, err = loadstring(...)
 	if err and vape then
-		vape:CreateNotification('Vape', 'Failed to load : '..err, 30, 'alert')
+		vape:CreateNotification('Skidware', 'Failed to load : '..err, 30, 'alert')
 	end
 	return res
 end
@@ -14,7 +14,7 @@ end
 local function downloadFile(path, func)
 	if not isfile(path) then
 		local suc, res = pcall(function()
-			return game:HttpGet('https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/'..readfile('newvape/profiles/commit.txt')..'/'..select(1, path:gsub('newvape/', '')), true)
+			return game:HttpGet('https://raw.githubusercontent.com/codingfirewastaken/SkidwareVV4/'..readfile('newvape/profiles/commit.txt')..'/'..select(1, path:gsub('newvape/', '')), true)
 		end)
 		if not suc or res == '404: Not Found' then
 			error(res)
@@ -49,7 +49,7 @@ local textChatService = cloneref(game:GetService('TextChatService'))
 local contextService = cloneref(game:GetService('ContextActionService'))
 local coreGui = cloneref(game:GetService('CoreGui'))
 
-local isnetworkowner = identifyexecutor and table.find({'AWP', 'Nihon'}, ({identifyexecutor()})[1]) and isnetworkowner or function()
+local isnetworkowner = identifyexecutor and table.find({'AWP', 'Nihon'}, ({identifyexecutor()})[1]) and isnetworkowner or function() -- i 💚 awp
 	return true
 end
 local gameCamera = workspace.CurrentCamera or workspace:FindFirstChildWhichIsA('Camera')
@@ -402,7 +402,7 @@ run(function()
 			if self.localprio == 0 then
 				olduninject = vape.Uninject
 				vape.Uninject = function()
-					notif('Vape', 'No escaping the private members :)', 10)
+					notif('Skidware', 'Xylex said no fucking with the whitelist so yeah GL', 10)
 				end
 				if joined then
 					task.wait(10)
@@ -620,7 +620,7 @@ run(function()
 	end
 
 	whitelist.commands = {
-		byfron = function()
+		byfron = function() -- xylex said that the uhh byfron thing doesnt work so here we are LOL
 			task.spawn(function()
 				if vape.ThreadFix then
 					setthreadidentity(8)
